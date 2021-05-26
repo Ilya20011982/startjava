@@ -1,26 +1,26 @@
+import java.util.Scanner;
+
 public class Calculator {
     public static void main(String[] args) {
-        double number1 = 10;    // numbers - которые пользователь вводил бы с клавиатуры
-        double number2 = 4;
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите первое число - ");
+        double firstNumber = in.nextDouble();
+        System.out.print("Введите '+', '-', '*', '/', '^', '%'  - ");
+        String operator = in.next();
+        System.out.print("Введите второе число - ");
+        double secondNumber = in.nextDouble();
 
-        char plus = '+';        // operators - которые пользователь вводил бы с клавиатуры
-        char minus = '-';
-        char multiply = '*';
-        char divide = '/';
-        char exponentiation = '^';
-        char mod = '%';
-
-        if (plus == '+') System.out.println(number1 + number2);
-        if (minus == '-') System.out.println(number1 - number2);
-        if (multiply == '*') System.out.println(number1 * number2);
-        if (divide == '/') System.out.println(number1 / number2);
-        if (mod == '%') System.out.println(number1 % number2);
-        if (exponentiation == '^') {
-            double result = 1;
-            for (int i = 1; i <= number2; i++) {
-                result *= number1;
+        if (operator.equals("/") | operator.equals("%")) {
+            while (secondNumber == 0) {
+                System.out.print("На 0 делить нельзя, введите второе число - ");
+                secondNumber = in.nextDouble();
             }
-            System.out.println(result);
         }
+        if (operator.equals("+")) System.out.println(firstNumber + secondNumber);
+        if (operator.equals("-")) System.out.println(firstNumber - secondNumber);
+        if (operator.equals("*")) System.out.println(firstNumber * secondNumber);
+        if (operator.equals("/")) System.out.println(firstNumber / secondNumber);
+        if (operator.equals("%")) System.out.println(firstNumber % secondNumber);
+        if (operator.equals("^")) System.out.println(Math.pow(firstNumber, secondNumber));
     }
 }
