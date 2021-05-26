@@ -17,8 +17,8 @@ public class Cycle {
         // Cycle do while
         int count = 10;
         int sumOdd = 0;
-        do{
-            if(count % 2 != 0) {sumOdd += count;}
+        do {
+            if (count % 2 != 0) sumOdd += count;
             count++;
         } while (count <= 20);
         System.out.println(sumOdd);
