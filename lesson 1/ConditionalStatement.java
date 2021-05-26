@@ -3,9 +3,9 @@ public class ConditionalStatement {
         int age = 29;
         if (age > 20) System.out.println("Возраст больше 20 лет - " + age + " лет");
 
-        boolean gender = true;
+        boolean gender = false;
         if (gender) System.out.println("Sex is male");
-        if (gender != false) System.out.println("Sex is female");
+        if (!gender) System.out.println("Sex is female");
 
         float height = 2.2f;
         if (height < 1.8) {
