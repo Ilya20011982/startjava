@@ -6,22 +6,22 @@ public class Calculator {
         System.out.print("Введите первое число - ");
         double firstNumber = in.nextDouble();
         System.out.print("Введите '+', '-', '*', '/', '^', '%'  - ");
-        String mathSign = in.next();
+        char mathSign = in.next().charAt(0);
         System.out.print("Введите второе число - ");
         double secondNumber = in.nextDouble();
 
-        if (mathSign.equals("/") || mathSign.equals("%")) {
+        if (mathSign == '/' || mathSign == '%') {
             while (secondNumber == 0) {
                 System.out.print("На 0 делить нельзя, введите второе число - ");
                 secondNumber = in.nextDouble();
             }
         }
-        if (mathSign.equals("+")) System.out.println(firstNumber + secondNumber);
-        if (mathSign.equals("-")) System.out.println(firstNumber - secondNumber);
-        if (mathSign.equals("*")) System.out.println(firstNumber * secondNumber);
-        if (mathSign.equals("/")) System.out.println(firstNumber / secondNumber);
-        if (mathSign.equals("%")) System.out.println(firstNumber % secondNumber);
-        if (mathSign.equals("^")) {
+        if (mathSign == '+') System.out.println(firstNumber + secondNumber);
+        if (mathSign == '-') System.out.println(firstNumber - secondNumber);
+        if (mathSign == '*') System.out.println(firstNumber * secondNumber);
+        if (mathSign == '/') System.out.println(firstNumber / secondNumber);
+        if (mathSign == '%') System.out.println(firstNumber % secondNumber);
+        if (mathSign == '^') {
             double result = 1;
             for (int i = 1; i <= secondNumber; i++) {
                 result *= firstNumber;
