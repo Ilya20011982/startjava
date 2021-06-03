@@ -9,12 +9,11 @@ public class Calculator {
 
     public boolean setSecondNumber(double secondNumber) {
         this.secondNumber = secondNumber;
-        return secondNumber == 0 && this.setMathSign(mathSign);
+        return secondNumber == 0 && (mathSign == '/' || mathSign == '%');
     }
 
-    public boolean setMathSign(char mathSign) {
+    public void setMathSign(char mathSign) {
         this.mathSign = mathSign;
-        return mathSign == '/' || mathSign == '%';
    }
 
     public void getResult() {
