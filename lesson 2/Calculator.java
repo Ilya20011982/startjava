@@ -18,25 +18,13 @@ public class Calculator {
    }
 
     public void getResult() {
-       switch (mathSign) {
-            case '+':
-                System.out.println(firstNumber + secondNumber);
-                break;
-            case '-':
-                System.out.println(firstNumber - secondNumber);
-                break;
-            case '*':
-                System.out.println(firstNumber * secondNumber);
-                break;
-            case '/':
-                System.out.println(firstNumber / secondNumber);
-                break;
-            case '%':
-                System.out.println(firstNumber % secondNumber);
-                break;
-            case '^':
-                System.out.println(Math.pow(firstNumber, secondNumber));
-                break;
+        switch (mathSign) {
+            case '+' -> System.out.println(firstNumber + secondNumber);
+            case '-' -> System.out.println(firstNumber - secondNumber);
+            case '*' -> System.out.println(firstNumber * secondNumber);
+            case '/' -> System.out.println(firstNumber / secondNumber);
+            case '%' -> System.out.println(firstNumber % secondNumber);
+            case '^' -> System.out.println(Math.pow(firstNumber, secondNumber));
         }
     }
 }
