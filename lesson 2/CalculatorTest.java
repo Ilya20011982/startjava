@@ -15,10 +15,8 @@ public class CalculatorTest {
             calculator.setMathSign(in.next().charAt(0));
 
             System.out.print("Введите второе число: ");
-            boolean zeroDivision = calculator.setSecondNumber(in.nextDouble());
-            while (zeroDivision) {
+            while (calculator.setSecondNumber(in.nextDouble())) {
                     System.out.print("На 0 делить нельзя, введите второе число - ");
-                    zeroDivision = calculator.setSecondNumber(in.nextDouble());
                 }
 
             calculator.getResult();
