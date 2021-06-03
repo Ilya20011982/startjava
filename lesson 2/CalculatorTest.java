@@ -7,10 +7,13 @@ public class CalculatorTest {
 
         while (flag) {
             Calculator newSession = new Calculator();
+
             System.out.print("Введите первое число: ");
             newSession.setFirstNumber(in.nextDouble());
+
             System.out.print("Введите знак математической операции: ");
             newSession.setMathSign(in.next().charAt(0));
+
             System.out.print("Введите второе число: ");
             newSession.setSecondNumber(in.nextDouble());
             if (newSession.getMathSign() == '/' || newSession.getMathSign() == '%') {
@@ -20,7 +23,9 @@ public class CalculatorTest {
                 }
             }
             newSession.result(newSession.getFirstNumber(), newSession.getSecondNumber(), newSession.getMathSign());
-            String answerUser = "";
+
+            String answerUser;
+
             while(flag) {
                 System.out.println("Хотите продолжить вычисления? [yes/no]: ");
                 answerUser = in.next();
