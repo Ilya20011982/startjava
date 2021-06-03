@@ -1,6 +1,5 @@
 public class WolfTest {
     public static void main(String[] args) {
-
         Wolf fisrtWolf = new Wolf();
 
         fisrtWolf.setNickname("Akela");
