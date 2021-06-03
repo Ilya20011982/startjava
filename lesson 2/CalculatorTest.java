@@ -16,7 +16,7 @@ public class CalculatorTest {
 
             System.out.print("Введите второе число: ");
             while (calculator.setSecondNumber(in.nextDouble())) {
-                    System.out.print("На 0 делить нельзя, введите второе число - ");
+                System.out.print("На 0 делить нельзя, введите второе число - ");
                 }
 
             calculator.getResult();
