@@ -1,53 +1,40 @@
 public class Calculator {
-    private double firstNumber, secondNumber;
+    private double firstNumber;
+    private double secondNumber;
     private char mathSign;
 
-    public double getFirstNumber() {
-        return firstNumber;
-    }
-
-    public double getSecondNumber() {
-        return secondNumber;
-    }
-
-    public char getMathSign() {
-        return mathSign;
-    }
-
-    public void setFirstNumber(double firstNumber) {
+   public void setFirstNumber(double firstNumber) {
         this.firstNumber = firstNumber;
     }
 
-    public void setSecondNumber(double secondNumber) {
+    public boolean setSecondNumber(double secondNumber) {
         this.secondNumber = secondNumber;
+        return secondNumber == 0 && this.setMathSign(mathSign);
     }
 
-    public void setMathSign(char mathSign) {
+    public boolean setMathSign(char mathSign) {
         this.mathSign = mathSign;
-    }
+        return mathSign == '/' || mathSign == '%';
+   }
 
-    public void result(double firstNumber, double secondNumber, char mathSign) {
-        this.firstNumber = firstNumber;
-        this.secondNumber = secondNumber;
-        this.mathSign = mathSign;
-
-        switch (mathSign) {
-            case ('+'):
+    public void getResult() {
+       switch (mathSign) {
+            case '+':
                 System.out.println(firstNumber + secondNumber);
                 break;
-            case ('-'):
+            case '-':
                 System.out.println(firstNumber - secondNumber);
                 break;
-            case ('*'):
+            case '*':
                 System.out.println(firstNumber * secondNumber);
                 break;
-            case ('/'):
+            case '/':
                 System.out.println(firstNumber / secondNumber);
                 break;
-            case ('%'):
+            case '%':
                 System.out.println(firstNumber % secondNumber);
                 break;
-            case ('^'):
+            case '^':
                 System.out.println(Math.pow(firstNumber, secondNumber));
                 break;
         }
