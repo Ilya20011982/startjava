@@ -1,28 +1,28 @@
 public class WolfTest {
     public static void main(String[] args) {
-        Wolf fisrtWolf = new Wolf();
+        Wolf firstWolf = new Wolf();
 
-        fisrtWolf.setNickname("Akela");
-        System.out.println("Nickname - " + fisrtWolf.getNickname());
+        firstWolf.setNickname("Akela");
+        System.out.println("Nickname - " + firstWolf.getNickname());
 
-        fisrtWolf.setAge(9);
-        fisrtWolf.setAge(-1);
-        fisrtWolf.setAge(5);
-        System.out.println("Age - " + fisrtWolf.getAge());
+        firstWolf.setAge(9);
+        firstWolf.setAge(-1);
+        firstWolf.setAge(5);
+        System.out.println("Age - " + firstWolf.getAge());
 
-        fisrtWolf.setColor("white");
-        System.out.println("Color - " + fisrtWolf.getColor());
+        firstWolf.setColor("white");
+        System.out.println("Color - " + firstWolf.getColor());
 
-        fisrtWolf.setGender("male");
-        System.out.println("Gender - " + fisrtWolf.getGender());
+        firstWolf.setGender("male");
+        System.out.println("Gender - " + firstWolf.getGender());
 
-        fisrtWolf.setWeight(50.5);
-        System.out.println("Weight - " + fisrtWolf.getWeight());
+        firstWolf.setWeight(50.5);
+        System.out.println("Weight - " + firstWolf.getWeight());
 
-        fisrtWolf.walk();
-        fisrtWolf.sitDown();
-        fisrtWolf.run();
-        fisrtWolf.howl();
-        fisrtWolf.hunt();
+        firstWolf.walk();
+        firstWolf.sitDown();
+        firstWolf.run();
+        firstWolf.howl();
+        firstWolf.hunt();
     }
 }
