@@ -2,11 +2,20 @@ import javax.sound.midi.Soundbank;
 
 public class JaegerTest {
     public static void main(String[] args) {
-        Jaeger firstJaeger = new Jaeger("Striker Eureka", "Mark-5", "Destroyed", "Australia");
-        firstJaeger.setJaegerSpecifications(76.2, 1850, 10, 10, 9);
+        Jaeger firstJaeger = new Jaeger();
 
-        firstJaeger.getJaeger();
-        firstJaeger.getJaegerSpecifications();
+        firstJaeger.setModelName("Striker Eureka");
+        firstJaeger.setMark("Mark-5");
+        firstJaeger.setStatus("Destroyed");
+        firstJaeger.setOrigin("Australia");
+        firstJaeger.setHeight(76.2);
+        firstJaeger.setWeight(1850);
+        firstJaeger.setSpeed(10);
+        firstJaeger.setStrength(10);
+        firstJaeger.setArmor(9);
+
+        System.out.println(firstJaeger);
+
         firstJaeger.drift();
         firstJaeger.move();
         firstJaeger.scanKaiju();
@@ -14,11 +23,15 @@ public class JaegerTest {
 
         System.out.println();
 
-        Jaeger secondJaeger = new Jaeger("Crimson Typhoon", "Mark-4", "Destroyed", "China");
-        secondJaeger.setJaegerSpecifications(76.2, 1722, 9, 8, 6);
+        Jaeger secondJaeger = new Jaeger("Gipsy Danger", "Mark-3", "Destroyed", "USA");
+        secondJaeger.setWeight(1980);
+        secondJaeger.setHeight(79.25);
+        secondJaeger.setStrength(8);
+        secondJaeger.setSpeed(7);
+        secondJaeger.setArmor(6);
 
-        secondJaeger.getJaeger();
-        secondJaeger.getJaegerSpecifications();
+        System.out.println(secondJaeger);
+
         secondJaeger.drift();
         secondJaeger.move();
         secondJaeger.scanKaiju();

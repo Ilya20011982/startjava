@@ -9,6 +9,9 @@ public class Jaeger {
     private int strength;
     private int armor;
 
+    public Jaeger() {
+    }
+
     public Jaeger(String modelName, String mark, String status, String origin) {
         this.modelName = modelName;
         this.mark = mark;
@@ -16,28 +19,82 @@ public class Jaeger {
         this.origin = origin;
     }
 
-    public void setJaegerSpecifications(double height, double weight, double speed, int strength, int armor) {
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    public void setHeight(double height) {
         this.height = height;
+    }
+
+    public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    public void setSpeed(double speed) {
         this.speed = speed;
+    }
+
+    public void setStrength(int strength) {
         this.strength = strength;
+    }
+
+    public void setArmor(int armor) {
         this.armor = armor;
-
     }
 
-    public void getJaeger() {
-        System.out.println("Model name - " + modelName);
-        System.out.println("Mark - " + mark);
-        System.out.println("Status - " + status);
-        System.out.println("Origin - " + origin);
+    public String toString() {
+        return "\nTechnical Information\n" + "Model name - " + modelName + '\n' + "Mark - " + mark + '\n' + "Status - " + status + '\n'
+        + "Origin - " + origin + '\n' + "\nJaeger Specifications\n" + "Height - " + height + '\n' + "Weight - " + weight
+        + '\n' + "Speed - " + speed + '\n' + "Strength - " + strength + '\n' + "Armor - " + armor;
     }
 
-    public void getJaegerSpecifications() {
-        System.out.println("Height - " + height);
-        System.out.println("Weight - " + weight);
-        System.out.println("Speed - " + status);
-        System.out.println("Strength - " + strength);
-        System.out.println("Armor - " + armor);
+    public String getModelName() {
+        return modelName;
+    }
+
+    public String getMark() {
+        return mark;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getArmor() {
+        return armor;
     }
 
     public void drift() {
