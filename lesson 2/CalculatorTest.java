@@ -5,7 +5,7 @@ public class CalculatorTest {
         Scanner in = new Scanner(System.in);
         String userAnswer = "yes";
 
-        while (userAnswer.equals("yes")) {
+        while ("yes".equals(userAnswer)) {
             Calculator calculator = new Calculator();
 
             System.out.print("Введите первое число: ");
@@ -17,15 +17,14 @@ public class CalculatorTest {
             System.out.print("Введите второе число: ");
             while (calculator.setSecondNumber(in.nextDouble())) {
                 System.out.print("На 0 делить нельзя, введите второе число - ");
-                }
+            }
 
-            calculator.getResult();
+            calculator.calc();
 
-            while(userAnswer.equals("yes")) {
+            do {
                 System.out.println("Хотите продолжить вычисления? [yes/no]: ");
                 userAnswer = in.next();
-                if (userAnswer.equals("yes") || userAnswer.equals("no")) break;
-            }
+            } while (!"yes".equals(userAnswer) && !"no".equals(userAnswer));
         }
     }
 }

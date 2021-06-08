@@ -8,15 +8,16 @@ public class Calculator {
     }
 
     public boolean setSecondNumber(double secondNumber) {
+        if (secondNumber == 0 && (mathSign == '/' || mathSign == '%')) return true;
         this.secondNumber = secondNumber;
-        return secondNumber == 0 && (mathSign == '/' || mathSign == '%');
+        return false;
     }
 
     public void setMathSign(char mathSign) {
         this.mathSign = mathSign;
    }
 
-    public void getResult() {
+    public void calc() {
         switch (mathSign) {
             case '+' -> System.out.println(firstNumber + secondNumber);
             case '-' -> System.out.println(firstNumber - secondNumber);
