@@ -23,6 +23,6 @@ public class Person {
     }
 
     void learn() {
-        System.out.println("lerning Java")
+        System.out.println("lerning Java");
     }
 }

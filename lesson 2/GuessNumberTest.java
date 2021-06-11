@@ -11,30 +11,17 @@ public class GuessNumberTest {
         System.out.print("Введите имя второго игрока - ");
         Player secondPlayer = new Player(in.next());
 
-        String playerAnswer = "yes";
+        GuessNumber game = new GuessNumber(firstPlayer, secondPlayer);
 
-        while ("yes".equals(playerAnswer)) {
-            GuessNumber game = new GuessNumber(firstPlayer, secondPlayer);
+        while("yes".equals(game.getPlayerAnswer())) {
+            game.gameLauncher();
+           do {
 
-            while (true) {
-                game.insertNumber1();
-                if (game.isNumber(firstPlayer.getNumber())) {
-                    game.setWinner(firstPlayer.getName());
-                    break;
-                }
-                game.insertNumber2();
-                if (game.isNumber(secondPlayer.getNumber())) {
-                    game.setWinner(secondPlayer.getName());
-                    break;
-                }
-            }
-            System.out.println("Выйграл игрок - " + game.getWinner());
-
-            do {
-                System.out.println("Хотите продолжить вычисления? [yes/no]: ");
-                playerAnswer = in.next();
-            } while (!"yes".equals(playerAnswer) && !"no".equals(playerAnswer));
+                System.out.println("Хотите продолжить игру 'Угадай число'? [yes/no]: ");
+                game.setPlayerAnswer(in.next());
+                } while (!"yes".equals(game.getPlayerAnswer()) && !"no".equals(game.getPlayerAnswer()));
         }
     }
 }
+
 
