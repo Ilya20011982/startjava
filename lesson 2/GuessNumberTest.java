@@ -12,14 +12,14 @@ public class GuessNumberTest {
         Player secondPlayer = new Player(in.next());
 
         GuessNumber game = new GuessNumber(firstPlayer, secondPlayer);
+        String playerAnswer = "yes";
 
-        while("yes".equals(game.getPlayerAnswer())) {
-            game.gameLauncher();
-           do {
-
+        while("yes".equals(playerAnswer)) {
+            game.launcher();
+            do {
                 System.out.println("Хотите продолжить игру 'Угадай число'? [yes/no]: ");
-                game.setPlayerAnswer(in.next());
-                } while (!"yes".equals(game.getPlayerAnswer()) && !"no".equals(game.getPlayerAnswer()));
+                playerAnswer = in.next();
+            } while (!"yes".equals(playerAnswer) && !"no".equals(playerAnswer));
         }
     }
 }
