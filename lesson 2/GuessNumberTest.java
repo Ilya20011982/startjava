@@ -15,7 +15,7 @@ public class GuessNumberTest {
         String playerAnswer = "yes";
 
         while("yes".equals(playerAnswer)) {
-            game.launcher();
+            game.launch();
             do {
                 System.out.println("Хотите продолжить игру 'Угадай число'? [yes/no]: ");
                 playerAnswer = in.next();

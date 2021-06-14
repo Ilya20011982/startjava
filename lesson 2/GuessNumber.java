@@ -6,22 +6,12 @@ public class GuessNumber {
     private final Player firstPlayer;
     private final Player secondPlayer;
 
-
     public GuessNumber(Player firstPlayer, Player secondPlayer) {
         this.firstPlayer = firstPlayer;
         this.secondPlayer = secondPlayer;
     }
 
-    private boolean checkNumber(int number) {
-        if (randomNumber == number) return true;
-        else {
-            if (randomNumber < number) System.out.println("Ваше число БОЛЬШЕ");
-            if (randomNumber > number) System.out.println("Ваше число МЕНЬШЕ");
-            return false;
-        }
-    }
-
-    public void launcher() {
+    public void launch() {
         Scanner in = new Scanner(System.in);
         System.out.println("Компьютер загадал число от 0 до 100");
         Random random = new Random();
@@ -42,6 +32,13 @@ public class GuessNumber {
             }
         }
         System.out.println("Выйграл игрок - " + winner + " угадавший число: " + randomNumber);
+    }
+
+    private boolean checkNumber(int number) {
+        if (randomNumber == number) return true;
+        if (randomNumber < number) System.out.println("Ваше число БОЛЬШЕ");
+        if (randomNumber > number) System.out.println("Ваше число МЕНЬШЕ");
+        return false;
     }
 }
 
