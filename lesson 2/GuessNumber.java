@@ -35,10 +35,9 @@ public class GuessNumber {
     }
 
     private boolean checkNumber(int number) {
-        if (randomNumber == number) return true;
-        if (randomNumber < number) System.out.println("Ваше число БОЛЬШЕ");
-        if (randomNumber > number) System.out.println("Ваше число МЕНЬШЕ");
+        if (number == randomNumber) return true;
+        String moreOrless = (number > randomNumber)? "БОЛЬШЕ":"МЕНЬШЕ";
+        System.out.println("Ваше число " + moreOrless);
         return false;
     }
 }
-
