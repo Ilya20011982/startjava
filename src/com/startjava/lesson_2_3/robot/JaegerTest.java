@@ -1,5 +1,3 @@
-import javax.sound.midi.Soundbank;
-
 public class JaegerTest {
     public static void main(String[] args) {
         Jaeger firstJaeger = new Jaeger();
