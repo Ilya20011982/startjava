@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CalculatorOld {
+public class Calculator {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите первое число - ");
