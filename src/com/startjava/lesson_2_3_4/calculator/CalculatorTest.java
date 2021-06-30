@@ -13,10 +13,14 @@ public class CalculatorTest {
             System.out.print("Введите математическое выражение: ");
             calculator.setMathExp(in.nextLine());
 
-            calculator.calc();
+            while (calculator.zeroDivision()) {
+                System.out.print("На 0 делить нельзя, введите второе число - ");
+                calculator.setSecondNumber(in.nextLine());
+            }
+            System.out.println(calculator.calc());
 
             do {
-                System.out.println("Хотите продолжить вычисления? [yes/no]: ");
+                System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 userAnswer = in.nextLine();
             } while (!"yes".equals(userAnswer) && !"no".equals(userAnswer));
         }
