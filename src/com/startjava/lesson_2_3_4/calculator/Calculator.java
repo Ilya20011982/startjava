@@ -11,24 +11,21 @@ public class Calculator {
        return "0".equals(mathExp[2]) && ("/".equals(mathExp[1]) || "%".equals(mathExp[1]));
    }
 
-    public  void setSecondNumber(String secondNumber) {
-        this.mathExp[2] = secondNumber;
-    }
-
-   public double calc() {
-        double firstNum = Double.parseDouble(mathExp[0]);
-        double secondNum = Double.parseDouble(mathExp[2]);
-        double result;
-
-        switch (mathExp[1]) {
-            case "+" -> result = firstNum + secondNum;
-            case "*" -> result = firstNum * secondNum;
-            case "^" -> result = Math.pow(firstNum, secondNum);
-            case "-" -> result = firstNum - secondNum;
-            case "/" -> result = firstNum / secondNum;
-            case "%" -> result = firstNum % secondNum;
-            default -> result = 0.0;
-        }
-       return result;
+   public Double calc() {
+       if (zeroDivision()) {
+            System.out.println("На 0 делить нельзя");
+            return null;
+       }
+       double firstNum = Double.parseDouble(mathExp[0]);
+       double secondNum = Double.parseDouble(mathExp[2]);
+       return switch (mathExp[1]) {
+           case "+" -> firstNum + secondNum;
+           case "*" -> firstNum * secondNum;
+           case "/" -> firstNum / secondNum;
+           case "^" -> Math.pow(firstNum, secondNum);
+           case "-" -> firstNum - secondNum;
+           case "%" -> firstNum % secondNum;
+           default ->  0.0;
+           };
     }
 }
