@@ -1,5 +1,6 @@
 package com.startjava.lesson_2_3_4.game;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -22,33 +23,35 @@ public class GuessNumber {
         System.out.println("У каждого игрока по 10 попыток чтобы угадать число.");
 
         for (attempt = 0; attempt < 10; attempt++) {
-            getNum(firstPlayer);
-            if (checkNumber(firstPlayer, firstPlayer.getNumber(attempt))) break;
+            inputNum(firstPlayer);
+            if (checkNumber(firstPlayer, attempt)) break;
             notAttempts(firstPlayer, attempt);
 
-            getNum(secondPlayer);
-            if (checkNumber(secondPlayer, secondPlayer.getNumber(attempt))) break;
+            inputNum(secondPlayer);
+            if (checkNumber(secondPlayer, attempt)) break;
             notAttempts(secondPlayer, attempt);
         }
-        System.out.println(firstPlayer.getName() + " " + firstPlayer.getNumbers(attempt));
-        System.out.println(secondPlayer.getName() + " " + secondPlayer.getNumbers(attempt));
+        System.out.println(firstPlayer.getName() + " " + Arrays.toString(firstPlayer.getNumbers(attempt)).replaceAll("\\[|\\]|,", ""));
+        System.out.println(secondPlayer.getName() + " " + Arrays.toString(secondPlayer.getNumbers(attempt)).replaceAll("\\[|\\]|,", ""));
 
         firstPlayer.resetNumbers(attempt);
         secondPlayer.resetNumbers(attempt);
     }
-    private void getNum(Player player) {
+
+    private void inputNum(Player player) {
         System.out.print("Игрок " + player.getName() + " введите число - ");
         Scanner in = new Scanner(System.in);
         player.setNumber(in.nextInt(), attempt);
     }
 
-    private boolean checkNumber(Player player, int number) {
+    private boolean checkNumber(Player player, int attempt) {
+        int number = player.getNumber(attempt);
         if (number == randomNumber) {
             System.out.println("Игрок " + player.getName() + " угадал число " + player.getNumber(attempt) +
                     " с " + (attempt + 1) + " попытки");
             return true;
         }
-        String moreOrLess = (number > randomNumber)? "БОЛЬШЕ":"МЕНЬШЕ";
+        String moreOrLess = (number > randomNumber) ? "БОЛЬШЕ" : "МЕНЬШЕ";
         System.out.println("Игрок " + player.getName() + " ваше число " + moreOrLess);
         return false;
     }

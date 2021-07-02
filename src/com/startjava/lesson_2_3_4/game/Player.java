@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class Player {
     private final String name;
-
     private int[] numbers = new int[10];
 
     public Player(String name) {
@@ -16,16 +15,15 @@ public class Player {
     }
 
     public void setNumber(int number, int attempt) {
-        this.numbers[attempt] = number;
+        numbers[attempt] = number;
     }
 
     public int getNumber(int attempt) {
         return numbers[attempt];
     }
 
-    public String getNumbers(int attempt) {
-        int[] result = Arrays.copyOf(numbers, attempt);
-        return Arrays.toString(result).replaceAll("\\[|\\]|,", "");
+    public int[] getNumbers(int attempt) {
+        return Arrays.copyOf(numbers, attempt);
     }
 
     public void resetNumbers(int attempt) {
