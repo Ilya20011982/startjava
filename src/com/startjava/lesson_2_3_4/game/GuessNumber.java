@@ -24,14 +24,15 @@ public class GuessNumber {
 
         for (attempt = 0; attempt < 10; attempt++) {
             inputNum(firstPlayer);
-            if (checkNumber(firstPlayer, attempt)) break;
-            notAttempts(firstPlayer, attempt);
+            if (checkNumber(firstPlayer)) break;
+            noTry(firstPlayer);
 
             inputNum(secondPlayer);
-            if (checkNumber(secondPlayer, attempt)) break;
-            notAttempts(secondPlayer, attempt);
+            if (checkNumber(secondPlayer)) break;
+            noTry(secondPlayer);
         }
         System.out.println(firstPlayer.getName() + " " + Arrays.toString(firstPlayer.getNumbers(attempt)).replaceAll("\\[|\\]|,", ""));
+
         System.out.println(secondPlayer.getName() + " " + Arrays.toString(secondPlayer.getNumbers(attempt)).replaceAll("\\[|\\]|,", ""));
 
         firstPlayer.resetNumbers(attempt);
@@ -44,7 +45,7 @@ public class GuessNumber {
         player.setNumber(in.nextInt(), attempt);
     }
 
-    private boolean checkNumber(Player player, int attempt) {
+    private boolean checkNumber(Player player) {
         int number = player.getNumber(attempt);
         if (number == randomNumber) {
             System.out.println("Игрок " + player.getName() + " угадал число " + player.getNumber(attempt) +
@@ -56,7 +57,7 @@ public class GuessNumber {
         return false;
     }
 
-    private void notAttempts(Player player, int attempt) {
+    private void noTry(Player player) {
         if (attempt == 9) System.out.println("У " + player.getName() + " закончились попытки");
     }
 }
