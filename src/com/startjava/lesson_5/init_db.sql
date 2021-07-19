@@ -1,4 +1,4 @@
-\c mydb;
+\c mydb
 
 INSERT INTO Jaegers (modelname, mark, height, weight, status, origin, launch, kaijukill)
 VALUES ('Gipsy Danger', 'Mark-3', 79.25, 1980, 'Destroyed', 'United States of America', 'July 10, 2017', 9),
