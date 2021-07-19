@@ -1,5 +1,5 @@
-CREATE DATABASE mydb
-\c mydb;
+CREATE DATABASE mydb;
+
 CREATE TABLE Jaegers
 (
     id        SERIAL PRIMARY KEY,

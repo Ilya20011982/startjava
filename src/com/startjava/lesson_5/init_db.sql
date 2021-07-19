@@ -1,5 +1,3 @@
-\c mydb
-
 INSERT INTO Jaegers (modelname, mark, height, weight, status, origin, launch, kaijukill)
 VALUES ('Gipsy Danger', 'Mark-3', 79.25, 1980, 'Destroyed', 'United States of America', 'July 10, 2017', 9),
        ('Striker Eureka', 'Mark-5', 76.2, 1850, 'Destroyed', 'Australia', 'November 2, 2019', 11),

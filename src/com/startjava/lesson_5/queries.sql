@@ -1,5 +1,3 @@
--- \c mydb
-
 SELECT * FROM Jaegers;
 SELECT * FROM Jaegers WHERE status != 'Destroyed';
 SELECT * FROM Jaegers WHERE mark = 'Mark-1' or mark = 'Mark-6';
